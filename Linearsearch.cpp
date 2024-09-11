@@ -1,10 +1,10 @@
 #include<iostream>
 using namespace std;
-int linearsearch(string inventory[] , int size , string target)
+int linearsearch(int arr[] , int size , int target)
 {
     for( int i=0 ; i<size ; i++)
     {
-        if(inventory[i] == target)
+        if(arr[i] == target)
         {
             return i;     //return i, it returns the value of index
         }
@@ -13,21 +13,21 @@ int linearsearch(string inventory[] , int size , string target)
 }
 int main()
 {
-    cout<<"\t****WARHOUSE INVENTORY SYSYTEM****\t"<<endl;
-    string inventory[10] ;
+    cout<<"\t****LINEAR SEARCH****\t"<<endl;
+    int arr[10] ;
     int size;
-    cout<<"Enter the size of the invenory :";
+    cout<<"Enter the size of the array :";
     cin>>size;
     for(int i=0 ; i<size ; i++)
     {
-        cout<<"Enter the name of the product at index "<< i << ":";
-        cin>>inventory[i];
+        cout<<"Enter the array element at index "<< i << ":";
+        cin>>arr[i];
     }
-    size = sizeof(inventory) / sizeof(inventory[0]);
-    string target;
-    cout<<"Enter the name of the product to search :";
+    size = sizeof(arr) / sizeof(arr[0]);
+    int target;
+    cout<<"Enter the array element to search :";
     cin>>target;
-    int result = linearsearch(inventory,size,target);
+    int result = linearsearch(arr,size,target);
     if(result != -1)
     {
         cout<<"Element "<< target << " found at index ." << result <<endl;
