@@ -5,7 +5,7 @@ struct Node        //Define the structure for the node
     int data;      //Data for store
     Node* next;    //Pointer to the next node
 };
-//Function to insert the node at the beginning
+//Function to insert the node at the end
 void insertatEnd(Node** head, int newData)
 {
     Node* newNode = new Node();       //Allocate memory for new node
@@ -24,6 +24,29 @@ void insertatEnd(Node** head, int newData)
     last->next = newNode;
 }
 //Function to print the llinked list
+void deletelist(Node** head, int key)
+{
+    Node* temp = *head;
+    Node* prev = NULL;   //if the heads node holds the key to be deleted
+    if(temp != NULL && temp->data == key)
+    {
+        *head = temp->next;
+        delete temp;
+        return;
+    }
+    while(temp != NULL && temp->data != key)
+    {
+        prev = temp;
+        temp = temp->next;
+    }
+    if(temp == NULL)
+    {
+        cout<<" Value not found in the list." << endl;
+        return;
+    }
+    prev->next = temp->next;
+    delete temp;
+}
 void printlist(Node* node)
 {
     while(node != NULL)
@@ -46,9 +69,16 @@ int main()
         int value;
         cin>>value;
         insertatEnd(&head,value);
-        //value == 0;
+        value == 0;
     }
     cout<<"Linked List: ";    //Print the linked list
+    printlist(head);
+    //Ask the user for the value to delete
+    cout<<"Enter the vlaue to delete :";
+    int deletevalue;
+    cin>>deletevalue;
+    deletelist(&head, deletevalue);  //delete the node with the specified value
+    cout<<"Linked list after deletion is :";
     printlist(head);
     return 0;
 }
