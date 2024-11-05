@@ -1,0 +1,53 @@
+QUESTION NO: 01
+Quick-Sort Performance Summary:
+1.	Best Case Performance
+o	Scenario: Pivot divides array into two equal parts.
+o	Complexity: O (n log n) O(n \log n)
+o	Ideal For: Randomized or balanced arrays.
+2.	Worst Case Performance
+o	Scenario: Array already sorted (ascending or descending) with first element as pivot.
+o	Complexity: O(n2) O(n^2)
+o	Issue: Unbalanced partition leading to many recursive calls.
+3.	Average Case Performance
+o	Scenario: Randomized or nearly random arrays.
+o	Complexity: O(n log n)O(n \log n)
+o	Note: Less optimal than median-based pivot selection.
+4.	Comparison with Other Pivot Choices
+o	Middle or Last Element: Slightly reduces worst-case risk for partially sorted arrays.
+o	Median-of-Three Pivot: Commonly used to improve balance and performance on average.
+
+QUESTION NO: 06
+Merge Sort vs Quick Sort:
+1. Time Complexity and Efficiency:
+•	Merge Sort:
+o	Time Complexity: O (n log n)
+o	Explanation: Consistent performance, works well even in the worst-case (like reverse sorted arrays).
+•	Quick Sort:
+o	Time Complexity: Average O (n log n), Worst O(n^2)
+o	Explanation: Faster for most cases but slows down with bad pivots, such as already sorted arrays.
+2. Performance on Different Array Sizes:
+•	Small Arrays:
+o	Both perform well, Quick Sort can be slightly faster due to lower overhead.
+•	Medium to Large Arrays:
+o	Quick Sort: Usually faster, efficient partitioning.
+o	Merge Sort: Stable but slower due to extra merging.
+•	Very Large Arrays:
+o	Merge Sort: Safe choice for worst-case scenarios.
+o	Quick Sort: Often faster with random data, fewer extra operations.
+3. Memory Use:
+•	Merge Sort:
+o	Requires extra memory for temporary arrays.
+o	Disadvantage with very large arrays.
+•	Quick Sort:
+o	Sorts in place, uses less memory.
+o	Advantageous for large datasets.
+4. Stability:
+•	Merge Sort:
+o	Stable, maintains order of equal elements.
+o	Useful for sorting by multiple fields.
+•	Quick Sort:
+o	Not stable, might reorder equal elements.
+o	Less critical if order preservation is not needed.
+Summary
+•	Quick Sort: Faster in practice, less memory, but can slow down with bad pivot choices.
+•	Merge Sort: Consistent performance, uses more memory, reliable for worst-case scenarios.
